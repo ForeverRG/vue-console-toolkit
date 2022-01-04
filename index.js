@@ -3,4 +3,4 @@ import CT from "./src";
 
 CT.install(Vue); // 注册指令
 
-export default CT.ConsoleToolkit;
+export default CT.ConsoleToolkit; // 导出组件

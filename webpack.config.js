@@ -1,8 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-function resolve(dir) {
-  return path.join(__dirname, "..", dir);
-}
+
 module.exports = {
   entry: "./index.js",
   output: {
@@ -16,15 +14,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|vue)$/,
-        loader: "eslint-loader",
-        enforce: "pre",
-        include: [resolve("src"), resolve("test")],
-        options: {
-          formatter: require("eslint-friendly-formatter"),
-        },
-      },
-      {
         test: /\.vue$/,
         loader: "vue-loader",
       },
@@ -32,13 +21,6 @@ module.exports = {
         test: /\.js$/,
         loader: "babel-loader",
         exclude: /node_modules/,
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]?[hash]",
-        },
       },
     ],
   },
